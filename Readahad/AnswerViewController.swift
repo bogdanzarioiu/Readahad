@@ -24,7 +24,7 @@ class AnswerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGreen
         
         setupAnswerLabel()
         setupDoneButton()
@@ -41,7 +41,7 @@ class AnswerViewController: UIViewController {
         
         answerLabel.textColor = .white
         answerLabel.backgroundColor = UIColor.systemGreen
-        answerLabel.font = UIFont(name: "AvenirNext-Heavy", size: 100)
+        answerLabel.font = UIFont(name: "AvenirNext-Heavy", size: 200)
         
     }
     
