@@ -39,14 +39,7 @@ class ViewController: UIViewController {
         return title
     }()
     
-//    private let selectedImage: UIImageView = {
-//           let image = UIImageView(image: UIImage(systemName: "checkmark.circle"))
-//           //image.contentMode = .scaleAspectFit
-//
-//           image.translatesAutoresizingMaskIntoConstraints = false
-//
-//           return image
-//       }()
+
     
     
     
@@ -83,9 +76,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = UIColor(named: "background")
         view.backgroundColor = .tertiarySystemBackground
-        //view.backgroundColor = .blue
         
       
         
@@ -203,6 +194,7 @@ class ViewController: UIViewController {
         colectionView.backgroundColor = .tertiarySystemBackground
         colectionView.isPagingEnabled = true
         colectionView.allowsMultipleSelection = true
+        colectionView.showsHorizontalScrollIndicator = false
         
         
     }
