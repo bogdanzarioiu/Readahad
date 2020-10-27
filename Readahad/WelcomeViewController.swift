@@ -23,7 +23,8 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollview.delegate = self
-        view.backgroundColor = .white
+        //view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = .tertiarySystemBackground
         onboardingData =
             [
                 OnboardingPageModel(title: "\nHello👋!\nWelcome to READAHAD!\n\nThis is a simple number guessing trick.\nThe idea of this whole app is that your phone can read someone's mind(hence the name😀).\n\nTo demonstrate this, you ask your spectator to think of a number between 1 and 63.\n\n\nYou ask them after this to tap on each of the grids that contain their thought of number.\nAt the end they press on GUESS NUMBER and the phone will read their mind🤯 "),
@@ -68,6 +69,7 @@ class WelcomeViewController: UIViewController {
             pageView.isEditable = false
             pageView.text = onboardingData?[x].title
             pageView.font = UIFont(name: "AvenirNext-Heavy", size: 15)
+            pageView.textColor = .label
             pageView.isSelectable = false
             //pageView.textContainer.lineBreakMode = .byWordWrapping
 //            pageView.sizeToFit()
@@ -81,7 +83,8 @@ class WelcomeViewController: UIViewController {
             
             
             scrollview.addSubview(pageView)
-            pageView.backgroundColor = .systemGreen
+            pageView.backgroundColor = .secondarySystemBackground
+            //pageView.backgroundColor = .systemGreen
         }
 
         
@@ -142,6 +145,7 @@ class WelcomeViewController: UIViewController {
     
     @objc private func handleGoToTrick(_ sender: UIButton) {
         let trickVC = ViewController()
+        //trickVC.view.backgroundColor = .tertiarySystemBackground
         trickVC.modalPresentationStyle = .fullScreen
         present(trickVC, animated: true)
         

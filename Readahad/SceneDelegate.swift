@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let welcomeVC = WelcomeViewController()
         //welcomeVC.view.backgroundColor = .white
         let mainVC = ViewController()
-        mainVC.view.backgroundColor = .white
+        mainVC.view.backgroundColor = .tertiarySystemBackground
         window?.rootViewController = welcomeVC
         window?.makeKeyAndVisible()
         

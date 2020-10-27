@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         let title = UILabel()
         title.text = "READAHAD"
         title.font = UIFont(name: "AvenirNext-Heavy", size: 40)
+        title.textColor = .label
         title.translatesAutoresizingMaskIntoConstraints = false
         
         return title
@@ -59,12 +60,12 @@ class ViewController: UIViewController {
     
 
     let grids = [
-        GridModel(gridName: "Card1New", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "Card2New", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "Card3New", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "Card4New", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "Card5New", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "Card6New", selectionImage: "checkmark.circle")
+        GridModel(gridName: "UpdatedCard1", selectionImage: "checkmark.circle"),
+        GridModel(gridName: "UpdatedCard2", selectionImage: "checkmark.circle"),
+        GridModel(gridName: "UpdatedCard3", selectionImage: "checkmark.circle"),
+        GridModel(gridName: "UpdatedCard4", selectionImage: "checkmark.circle"),
+        GridModel(gridName: "UpdatedCard5", selectionImage: "checkmark.circle"),
+        GridModel(gridName: "UpdatedCard6", selectionImage: "checkmark.circle")
      ]
 
         
@@ -82,13 +83,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        //view.backgroundColor = UIColor(named: "background")
+        view.backgroundColor = .tertiarySystemBackground
+        //view.backgroundColor = .blue
         
-        
-
-        
-        
-        
+      
         
         setupTitleLabel()
         //setupSelectedImage()
@@ -201,7 +200,7 @@ class ViewController: UIViewController {
         colectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         colectionView.bottomAnchor.constraint(equalTo: makeGuessButton.topAnchor, constant: -80).isActive = true
         
-        colectionView.backgroundColor = .white
+        colectionView.backgroundColor = .tertiarySystemBackground
         colectionView.isPagingEnabled = true
         colectionView.allowsMultipleSelection = true
         
@@ -222,7 +221,7 @@ class ViewController: UIViewController {
         makeGuessButton.setTitleColor(.white, for: .normal)
         makeGuessButton.titleLabel?.font = UIFont(name: "AvenirNext-Heavy", size: 20)
 
-        makeGuessButton.backgroundColor = .black
+        makeGuessButton.backgroundColor = UIColor(named: "background")
         makeGuessButton.alpha = 0.2
         makeGuessButton.isEnabled = false
         makeGuessButton.layer.cornerRadius = 5

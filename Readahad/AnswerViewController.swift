@@ -56,7 +56,7 @@ class AnswerViewController: UIViewController {
         //styling the refresh button
         doneButton.setTitle("Done", for: .normal)
         doneButton.titleLabel?.font = UIFont(name: "AvenirNext-Heavy", size: 20)
-        doneButton.backgroundColor = .black
+        doneButton.backgroundColor = UIColor(named: "background")
         doneButton.tintColor = .white
         doneButton.layer.cornerRadius = 5
         doneButton.clipsToBounds = true
