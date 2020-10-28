@@ -71,9 +71,7 @@ class AnswerViewController: UIViewController {
         dismiss(animated: true) {
             self.delegate?.didTapResetButton()
         }
-        //delegate?.passString(string: "TEST")
         
-        //my instance is being dealocated before calling the delegate method I think
         
     }
 

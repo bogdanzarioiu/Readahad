@@ -10,7 +10,5 @@ import Foundation
 
 struct GridModel {
     var gridName: String
-    //var selectedItem: String
     var selectionImage: String
-    //var notSelectionImage: String
 }

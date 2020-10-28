@@ -70,9 +70,6 @@ class ViewController: UIViewController {
     
 
 
-   
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +78,6 @@ class ViewController: UIViewController {
       
         
         setupTitleLabel()
-        //setupSelectedImage()
         setupResetButton()
         setupGuessButton()
         setupCollectionView()
@@ -116,15 +112,7 @@ class ViewController: UIViewController {
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     
-//
-//    func setupSelectedImage() {
-//        view.addSubview(selectedImage)
-//        selectedImage.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
-//        selectedImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        selectedImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
-//        selectedImage.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//
-//    }
+
     
     func setupHiddenInstructionsButton() {
         view.addSubview(hiddenInstructionsButton)
@@ -276,7 +264,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! NumbersCollectionViewCell
-        //cell.contentView.contentScaleFactor = 0.9
         let grid = grids[indexPath.item]
         cell.grid = grid
             
@@ -291,7 +278,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("You selected item at: \(indexPath.item)")
      
-        _ = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! NumbersCollectionViewCell
+//        _ = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! NumbersCollectionViewCell
 
         
             switch indexPath.item {
@@ -370,7 +357,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //selectedLabel.text = "Not selected"
         
         let width = scrollView.frame.size.width
         let page = scrollView.contentOffset.x / width

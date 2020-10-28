@@ -56,8 +56,7 @@ class NumbersCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
 
-        //backgroundColor = UIColor(named: "background")
-        //backgroundColor = .secondarySystemBackground
+   
         backgroundColor = .clear
         setupNumbersGrid()
         

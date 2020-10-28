@@ -11,5 +11,4 @@ import Foundation
 
 struct OnboardingPageModel {
     var title: String
-    //var description: String
 }

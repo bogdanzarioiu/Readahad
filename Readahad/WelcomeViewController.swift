@@ -63,28 +63,20 @@ class WelcomeViewController: UIViewController {
 
         for x in 0 ..< 2 { //i had 3
             let pageView = UITextView(frame: CGRect(x: CGFloat(x) * (view.frame.size.width), y: 0, width: view.frame.size.width, height: view.frame.size.height))
-            //pageView.backgroundColor = .systemRed
-            //scrollview.addSubview(pageView)
+          
             pageView.contentInset = UIEdgeInsets(top: 30, left: 16, bottom: 0, right: 16)
             pageView.isEditable = false
             pageView.text = onboardingData?[x].title
             pageView.font = UIFont(name: "AvenirNext-Heavy", size: 15)
             pageView.textColor = .label
             pageView.isSelectable = false
-            //pageView.textContainer.lineBreakMode = .byWordWrapping
-//            pageView.sizeToFit()
-//            pageView.translatesAutoresizingMaskIntoConstraints = false
-//            pageView.topAnchor.constraint(equalTo: scrollview.topAnchor).isActive = true
-//            pageView.leadingAnchor.constraint(equalTo: scrollview.leadingAnchor).isActive = true
-//            pageView.bottomAnchor.constraint(equalTo: scrollview.bottomAnchor).isActive = true
-//            pageView.trailingAnchor.constraint(equalTo: scrollview.trailingAnchor).isActive = true
+           
         
         
             
             
             scrollview.addSubview(pageView)
             pageView.backgroundColor = .secondarySystemBackground
-            //pageView.backgroundColor = .systemGreen
         }
 
         
@@ -105,7 +97,6 @@ class WelcomeViewController: UIViewController {
         goToTrickButton.setTitle("Go to trick", for: .normal)
         goToTrickButton.titleLabel?.font = UIFont(name: "AvenirNext-Heavy", size: 20)
         goToTrickButton.backgroundColor = .systemGreen
-        //goToTrickButton.tintColor = .white
         goToTrickButton.setTitleColor(.white, for: .normal)
         goToTrickButton.layer.cornerRadius = 5
         goToTrickButton.clipsToBounds = true
@@ -121,8 +112,7 @@ class WelcomeViewController: UIViewController {
     private func setupPageControl() {
         view.addSubview(pageControl)
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-//        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-//        pageControl.bottomAnchor.constraint(equalTo: goToTrickButton.topAnchor, constant: -20).isActive = true
+
         pageControl.topAnchor.constraint(equalTo: scrollview.bottomAnchor, constant: 20).isActive = true
         pageControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20).isActive = true
         pageControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20).isActive = true
@@ -132,7 +122,6 @@ class WelcomeViewController: UIViewController {
         pageControl.numberOfPages = 2 //I had 2
         pageControl.currentPageIndicatorTintColor = .systemGreen
         pageControl.pageIndicatorTintColor = .systemGray
-        //pageControl.backgroundColor = .systemGray
         pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for: .valueChanged)
         
     }
@@ -145,7 +134,6 @@ class WelcomeViewController: UIViewController {
     
     @objc private func handleGoToTrick(_ sender: UIButton) {
         let trickVC = ViewController()
-        //trickVC.view.backgroundColor = .tertiarySystemBackground
         trickVC.modalPresentationStyle = .fullScreen
         present(trickVC, animated: true)
         
