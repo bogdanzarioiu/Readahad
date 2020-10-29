@@ -39,6 +39,18 @@ class ViewController: UIViewController {
         return title
     }()
     
+    
+    private let subtitleLabel: UILabel = {
+        let subtitle = UILabel()
+        subtitle.text = "・select the cards containing your thought of number・"
+        subtitle.font = UIFont(name: "AvenirNext-Regular", size: 12)
+        subtitle.textColor = .label
+        subtitle.translatesAutoresizingMaskIntoConstraints = false
+        
+        return subtitle
+        
+    }()
+    
 
     
     
@@ -78,6 +90,7 @@ class ViewController: UIViewController {
       
         
         setupTitleLabel()
+        setupSubtitleLabel()
         setupResetButton()
         setupGuessButton()
         setupCollectionView()
@@ -110,6 +123,13 @@ class ViewController: UIViewController {
         view.addSubview(titleLabel)
         titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
+    func setupSubtitleLabel() {
+        view.addSubview(subtitleLabel)
+        subtitleLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
+        subtitleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        
     }
     
 
