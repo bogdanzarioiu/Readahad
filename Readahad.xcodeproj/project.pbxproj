@@ -76,10 +76,10 @@
 				B53E038D2525D65000244943 /* NumbersCollectionViewCell.swift */,
 				B53E03932527442700244943 /* AnswerViewController.swift */,
 				B5011AAE252F6D8D00DFA83C /* OnboardingPageView.swift */,
+				B5011AB0252FB8C500DFA83C /* OnboardingPageModel.swift */,
+				B53E03912526129400244943 /* GridModel.swift */,
 				B53E03822524E23100244943 /* Assets.xcassets */,
 				B53E03842524E23100244943 /* LaunchScreen.storyboard */,
-				B53E03912526129400244943 /* GridModel.swift */,
-				B5011AB0252FB8C500DFA83C /* OnboardingPageModel.swift */,
 				B53E03872524E23100244943 /* Info.plist */,
 			);
 			path = Readahad;

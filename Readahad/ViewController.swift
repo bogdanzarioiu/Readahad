@@ -159,7 +159,7 @@ class ViewController: UIViewController {
     
     
     @objc private func handleSecretInstructions(_ sender: UIButton) {
-        print("Tapped!")
+        //print("Tapped!")
         view.addSubview(popUpInstructionsWindow)
         popUpInstructionsWindow.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         popUpInstructionsWindow.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -169,7 +169,7 @@ class ViewController: UIViewController {
         popUpInstructionsWindow.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
         popUpInstructionsWindow.alpha = 0
 
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.3) {
             self.visualEffectView.alpha = 1
             self.popUpInstructionsWindow.alpha = 1
             self.popUpInstructionsWindow.transform = CGAffineTransform.identity
@@ -190,7 +190,6 @@ class ViewController: UIViewController {
         colectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
         
         view.addSubview(colectionView)
-        //colectionView.contentMode = .scaleAspectFit
         
         colectionView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -296,36 +295,25 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("You selected item at: \(indexPath.item)")
+        //print("You selected item at: \(indexPath.item)")
      
-//        _ = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! NumbersCollectionViewCell
 
-        
             switch indexPath.item {
             case 0:
                 yourNumber += 16
-                print(yourNumber)
             case 1:
                 yourNumber += 4
-                print(yourNumber)
             case 2:
                 yourNumber += 8
-                print(yourNumber)
             case 3:
                 yourNumber += 2
-                print(yourNumber)
             case 4:
                 yourNumber += 32
-                print(yourNumber)
             case 5:
                 yourNumber += 1
-                print(yourNumber)
             default:
                 yourNumber += 0
-                print(yourNumber)
-            //}
            
-            
         }
   
     }
@@ -431,7 +419,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: SecretInstructionsDelegate {
     func handleDismissal() {
-        UIView.animate(withDuration: 0.4, animations: {
+        UIView.animate(withDuration: 0.3, animations: {
             self.visualEffectView.alpha = 0
             self.popUpInstructionsWindow.alpha = 0
             self.popUpInstructionsWindow.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
