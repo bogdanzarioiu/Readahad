@@ -8,6 +8,7 @@
 
 import UIKit
 
+//@available(iOS 14.0, *)
 class NumbersCollectionViewCell: UICollectionViewCell {
     
     var grid: GridModel? {
@@ -28,8 +29,8 @@ class NumbersCollectionViewCell: UICollectionViewCell {
         return n1Grid
     }()
     
-     let selectedImage: UIImageView = {
-         let image = UIImageView(image: (UIImage(systemName: "checkmark.circle")))
+    var selectedImage: UIImageView = {
+         let image = UIImageView(image: (UIImage(systemName: "circle")))
         image.tintColor = .systemGreen
         
          image.translatesAutoresizingMaskIntoConstraints = false
@@ -43,7 +44,7 @@ class NumbersCollectionViewCell: UICollectionViewCell {
           didSet {
             
             UIView.animate(withDuration: 0.15) {
-                self.selectedImage.image = self.isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "checkmark.circle")
+                self.selectedImage.image = self.isSelected ? UIImage(systemName: "checkmark.circle.fill") : UIImage(systemName: "circle")
                 self.numbersGrid.transform = self.isSelected ? CGAffineTransform(scaleX: 1.05, y: 1.05) : CGAffineTransform.identity
             }
             
@@ -51,6 +52,16 @@ class NumbersCollectionViewCell: UICollectionViewCell {
             
           }
       }
+    
+  
+    
+   
+    
+//    override var isHidden: Bool {
+//        didSet {
+//            self.selectedImage.image = UIImage(systemName: "checkmark.circle.fill")
+//        }
+//    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

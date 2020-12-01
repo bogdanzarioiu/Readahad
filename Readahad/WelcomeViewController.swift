@@ -10,7 +10,6 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     
-    //private let container
     private let scrollview = UIScrollView()
     private let welcomeTextView = UITextView()
     private let pageControl = UIPageControl()
@@ -23,13 +22,12 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollview.delegate = self
-        //view.backgroundColor = UIColor(named: "background")
         view.backgroundColor = .tertiarySystemBackground
         onboardingData =
             [
-                OnboardingPageModel(title: "\nHello👋!\nWelcome to READAHAD!\n\nThis is a simple number guessing trick.\nThe idea of this whole app is that your phone can read someone's mind(hence the name😀).\n\nTo demonstrate this, you ask your spectator to think of a number between 1 and 63.\n\n\nYou ask them after this to tap on each of the grids that contain their thought of number.\nAt the end they press on GUESS NUMBER and the phone will read their mind🤯 "),
-                OnboardingPageModel(title: "\nHOW THIS WORKS?\n\nEach time the spectator says their number is on a grid, you simply need to add the number in the top left corner to the sum(but the phone does this already for you).\n\nIf you go through the grids you will see that the top left numbers are : 16, 4, 8, 2 32 1 - all powers of 2.\nSo you can construct any number up to 63 included with these powers of 2.\n\nYou can access this info again at any time from the trick screen by tapping in the top right corner.\nIf you look closely you can see a small gray dot. Just tap around it anywhere you need a refresher.")]
-//                OnboardingPageModel(title: "\nREMINDER\n\nYou can access this info again at any time from the trick screen by tapping in the top right corner\nIf you look closely you can see a small gray dot.Just tap around it anywhere you need a refresher.")
+                OnboardingPageModel(title: "\nHello👋!\nWelcome to READAHAD!\n\nThis is a simple number guessing trick that you can show someone.\nThe idea of this whole app is that your phone can read someone's mind(hence the name😀).\n\nTo demonstrate this, you ask your spectator to think of a number between 1 and 63.\n\nYou ask them after this to tap on each of the grids that contain their thought of number.\nAt the end they press on GUESS NUMBER and the phone will read their mind🤯 "),
+                OnboardingPageModel(title: "\nHOW THIS WORKS?\n\nEach time the spectator says their number is on a grid, you simply need to add the number in the top left corner to the sum(but the phone does this already for you).\n\nIf you go through the grids you will see that the top left numbers are : 16, 4, 8, 2 32 1 - all powers of 2.\nSo you can construct any number up to 63 included with these powers of 2.\n\nYou can access this info again at any time from the trick screen by tapping in the top right corner.\nIf you look closely you can see a small gray circle. Just tap around it anytime you need a refresher.")]
+
                 
         
         
@@ -38,8 +36,12 @@ class WelcomeViewController: UIViewController {
         setupScrollView()
         setupPageControl()
         setupGoToTrickButton()
+        
+        
 
     }
+    
+  
     
     private func setupScrollView() {
         view.addSubview(scrollview)
@@ -56,12 +58,12 @@ class WelcomeViewController: UIViewController {
 
         scrollview.isPagingEnabled = true
         scrollview.isScrollEnabled = true
-        scrollview.contentSize = CGSize(width: view.frame.size.width * 2, height: 0) //height 0 disables vertical scrolling; I had 2
+        scrollview.contentSize = CGSize(width: view.frame.size.width * 2, height: 0) //height 0 disables vertical scrolling
         scrollview.backgroundColor = .systemGreen
         
 
 
-        for x in 0 ..< 2 { //i had 3
+        for x in 0 ..< 2 { //I had 3
             let pageView = UITextView(frame: CGRect(x: CGFloat(x) * (view.frame.size.width), y: 0, width: view.frame.size.width, height: view.frame.size.height))
           
             pageView.contentInset = UIEdgeInsets(top: 30, left: 16, bottom: 0, right: 16)
@@ -73,8 +75,6 @@ class WelcomeViewController: UIViewController {
            
         
         
-            
-            
             scrollview.addSubview(pageView)
             pageView.backgroundColor = .secondarySystemBackground
         }

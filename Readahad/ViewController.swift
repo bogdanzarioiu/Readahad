@@ -42,8 +42,8 @@ class ViewController: UIViewController {
     
     private let subtitleLabel: UILabel = {
         let subtitle = UILabel()
-        subtitle.text = "・select the cards containing your thought of number・"
-        subtitle.font = UIFont(name: "AvenirNext-Regular", size: 12)
+        subtitle.text = "・select the cards containing your thought of number between 1 and 63・"
+        subtitle.font = UIFont(name: "AvenirNext-Regular", size: 10)
         subtitle.textColor = .label
         subtitle.translatesAutoresizingMaskIntoConstraints = false
         
@@ -65,12 +65,12 @@ class ViewController: UIViewController {
     
 
     let grids = [
-        GridModel(gridName: "UpdatedCard1", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "UpdatedCard2", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "UpdatedCard3", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "UpdatedCard4", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "UpdatedCard5", selectionImage: "checkmark.circle"),
-        GridModel(gridName: "UpdatedCard6", selectionImage: "checkmark.circle")
+        GridModel(gridName: "UpdatedCard1", selectionImage: "circle"),
+        GridModel(gridName: "UpdatedCard2", selectionImage: "circle"),
+        GridModel(gridName: "UpdatedCard3", selectionImage: "circle"),
+        GridModel(gridName: "UpdatedCard4", selectionImage: "circle"),
+        GridModel(gridName: "UpdatedCard5", selectionImage: "circle"),
+        GridModel(gridName: "UpdatedCard6", selectionImage: "circle")
      ]
 
         
@@ -95,16 +95,10 @@ class ViewController: UIViewController {
         setupGuessButton()
         setupCollectionView()
         setupHiddenInstructionsButton()
+        setupVisualEffectView()
 
         
-        view.addSubview(visualEffectView)
-              
-        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        visualEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        visualEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
-        visualEffectView.alpha = 0
         
         
         
@@ -117,6 +111,18 @@ class ViewController: UIViewController {
 
 
 }
+    
+    func setupVisualEffectView() {
+        view.addSubview(visualEffectView)
+              
+        visualEffectView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        visualEffectView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        visualEffectView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        visualEffectView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        
+        visualEffectView.alpha = 0
+        
+    }
     
     
     func setupTitleLabel() {
@@ -144,19 +150,14 @@ class ViewController: UIViewController {
         hiddenInstructionsButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
         hiddenInstructionsButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
         
-        hiddenInstructionsButton.setTitle("・", for: .normal)
+        hiddenInstructionsButton.setTitle("◦", for: .normal)
         hiddenInstructionsButton.setTitleColor(.gray, for: .normal)
         hiddenInstructionsButton.addTarget(self, action: #selector(handleSecretInstructions(_:)), for: .touchUpInside)
 
             }
     
     
-    
-    
-    
-    
-    
-    
+ 
     
     @objc private func handleSecretInstructions(_ sender: UIButton) {
         //print("Tapped!")
@@ -292,15 +293,25 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
     }
     
+//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath) as! NumbersCollectionViewCell
+//        cell.selectedImage.image = UIImage(systemName: "checkmark.circle.fill")
+//        print("unhighlighted!")
+//    }
+    
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //print("You selected item at: \(indexPath.item)")
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! NumbersCollectionViewCell
+//        let grid = grids[indexPath.item]
+//        cell.grid = grid
      
 
             switch indexPath.item {
             case 0:
                 yourNumber += 16
+
             case 1:
                 yourNumber += 4
             case 2:
@@ -368,6 +379,10 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         
         let width = scrollView.frame.size.width
         let page = scrollView.contentOffset.x / width
+//        let indexPath = IndexPath(item: Int(page), section: 0)
+//        print(indexPath.row)
+        
+       // let cell = NumbersCollectionViewCell()
     
         switch page {
         case 0.0:
@@ -375,6 +390,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             makeGuessButton.isEnabled = false
             resetButton.alpha = 0.0
             resetButton.isEnabled = false
+            //cell.selectedImage.image = UIImage(systemName: "checkmark.circle.fill")
         case 1.0:
             makeGuessButton.alpha = 0.2
             makeGuessButton.isEnabled = false
