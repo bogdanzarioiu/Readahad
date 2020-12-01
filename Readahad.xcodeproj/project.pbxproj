@@ -70,19 +70,43 @@
 			children = (
 				B53E03792524E22D00244943 /* AppDelegate.swift */,
 				B53E037B2524E22D00244943 /* SceneDelegate.swift */,
-				B53E037D2524E22D00244943 /* ViewController.swift */,
-				B562EB17253496EE002A0995 /* SecretInstructions.swift */,
-				B5011AAA252F0BC400DFA83C /* WelcomeViewController.swift */,
-				B53E038D2525D65000244943 /* NumbersCollectionViewCell.swift */,
-				B53E03932527442700244943 /* AnswerViewController.swift */,
-				B5011AAE252F6D8D00DFA83C /* OnboardingPageView.swift */,
-				B5011AB0252FB8C500DFA83C /* OnboardingPageModel.swift */,
-				B53E03912526129400244943 /* GridModel.swift */,
+				B5475BAF25767414005979DE /* Controller */,
+				B5475BAE257673FA005979DE /* View */,
+				B5475BAD257673B0005979DE /* Model */,
 				B53E03822524E23100244943 /* Assets.xcassets */,
 				B53E03842524E23100244943 /* LaunchScreen.storyboard */,
 				B53E03872524E23100244943 /* Info.plist */,
 			);
 			path = Readahad;
+			sourceTree = "<group>";
+		};
+		B5475BAD257673B0005979DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5011AB0252FB8C500DFA83C /* OnboardingPageModel.swift */,
+				B53E03912526129400244943 /* GridModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B5475BAE257673FA005979DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B562EB17253496EE002A0995 /* SecretInstructions.swift */,
+				B53E038D2525D65000244943 /* NumbersCollectionViewCell.swift */,
+				B5011AAE252F6D8D00DFA83C /* OnboardingPageView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B5475BAF25767414005979DE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B53E037D2524E22D00244943 /* ViewController.swift */,
+				B5011AAA252F0BC400DFA83C /* WelcomeViewController.swift */,
+				B53E03932527442700244943 /* AnswerViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
