@@ -236,8 +236,8 @@ class ViewController: UIViewController {
         makeGuessButton.setTitle("Guess the number", for: .normal)
         makeGuessButton.setTitleColor(.white, for: .normal)
         makeGuessButton.titleLabel?.font = UIFont(name: "AvenirNext-Heavy", size: 20)
-
-        makeGuessButton.backgroundColor = UIColor(named: "background")
+// was background
+        makeGuessButton.backgroundColor = .systemGreen
         makeGuessButton.alpha = 0.2
         makeGuessButton.isEnabled = false
         makeGuessButton.layer.cornerRadius = 5
@@ -267,7 +267,7 @@ class ViewController: UIViewController {
         resetButton.setTitle("Reset", for: .normal)
         resetButton.setTitleColor(.white, for: .normal)
         resetButton.titleLabel?.font = UIFont(name: "AvenirNext-Heavy", size: 20)
-        resetButton.backgroundColor = .systemGreen
+        resetButton.backgroundColor = UIColor(named: "background")
         resetButton.alpha = 0.0
         resetButton.isEnabled = true
         resetButton.layer.cornerRadius = 5
