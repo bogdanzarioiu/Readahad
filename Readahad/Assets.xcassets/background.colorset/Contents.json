@@ -5,27 +5,9 @@
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.118",
-          "green" : "0.110",
-          "red" : "0.110"
-        }
-      },
-      "idiom" : "iphone"
-    },
-    {
-      "appearances" : [
-        {
-          "appearance" : "luminosity",
-          "value" : "light"
-        }
-      ],
-      "color" : {
-        "color-space" : "srgb",
-        "components" : {
-          "alpha" : "1.000",
-          "blue" : "0.118",
-          "green" : "0.110",
-          "red" : "0.110"
+          "blue" : "0.134",
+          "green" : "0.125",
+          "red" : "0.117"
         }
       },
       "idiom" : "iphone"
@@ -41,9 +23,9 @@
         "color-space" : "srgb",
         "components" : {
           "alpha" : "1.000",
-          "blue" : "0.118",
-          "green" : "0.110",
-          "red" : "0.110"
+          "blue" : "0.130",
+          "green" : "0.121",
+          "red" : "0.113"
         }
       },
       "idiom" : "iphone"
