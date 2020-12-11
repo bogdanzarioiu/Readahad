@@ -22,7 +22,8 @@ class NumbersCollectionViewCell: UICollectionViewCell {
     }
     private  let numbersGrid: UIImageView = {
         let n1Grid = UIImageView(image: UIImage(named: "Card1New"))
-        n1Grid.contentMode = .scaleAspectFit
+        n1Grid.contentMode = .scaleAspectFill
+        //n1Grid.clipsToBounds = true
         n1Grid.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -54,14 +55,7 @@ class NumbersCollectionViewCell: UICollectionViewCell {
       }
     
   
-    
-   
-    
-//    override var isHidden: Bool {
-//        didSet {
-//            self.selectedImage.image = UIImage(systemName: "checkmark.circle.fill")
-//        }
-//    }
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -82,18 +76,15 @@ class NumbersCollectionViewCell: UICollectionViewCell {
         selectedImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
         
-        
-        
-       
     
        
         //grid constraints
          addSubview(numbersGrid)
         numbersGrid.topAnchor.constraint(equalTo: selectedImage.bottomAnchor, constant: 16).isActive = true
 
-        numbersGrid.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
+        numbersGrid.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50).isActive = true
         numbersGrid.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true
-        numbersGrid.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
+        numbersGrid.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50).isActive = true
         
         
 

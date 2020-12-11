@@ -51,6 +51,17 @@ class ViewController: UIViewController {
         
     }()
     
+    private let pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.numberOfPages = 6
+        pc.currentPageIndicatorTintColor = .systemGreen
+        pc.pageIndicatorTintColor = .systemGray
+        pc.transform = CGAffineTransform(scaleX: 0.75, y: 0.75)
+        pc.translatesAutoresizingMaskIntoConstraints = false
+        
+        return pc
+    }()
+    
 
     
     
@@ -94,6 +105,7 @@ class ViewController: UIViewController {
         setupResetButton()
         setupGuessButton()
         setupCollectionView()
+        setupPageControl()
         setupHiddenInstructionsButton()
         setupVisualEffectView()
 
@@ -111,6 +123,8 @@ class ViewController: UIViewController {
 
 
 }
+    
+
     
     func setupVisualEffectView() {
         view.addSubview(visualEffectView)
@@ -207,6 +221,12 @@ class ViewController: UIViewController {
         
     }
     
+    private func setupPageControl() {
+        view.addSubview(pageControl)
+        pageControl.topAnchor.constraint(equalTo: colectionView.bottomAnchor, constant: 10).isActive = true
+        pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
 
     
     func setupGuessButton() {
@@ -293,25 +313,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath) as! NumbersCollectionViewCell
-//        cell.selectedImage.image = UIImage(systemName: "checkmark.circle.fill")
-//        print("unhighlighted!")
-//    }
     
 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //print("You selected item at: \(indexPath.item)")
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! NumbersCollectionViewCell
-//        let grid = grids[indexPath.item]
-//        cell.grid = grid
-     
-
+  
             switch indexPath.item {
             case 0:
                 yourNumber += 16
-
             case 1:
                 yourNumber += 4
             case 2:
@@ -372,17 +381,20 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         return 0
     }
     
-   
+
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        
+        return 0
+    }
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let width = scrollView.frame.size.width
         let page = scrollView.contentOffset.x / width
-//        let indexPath = IndexPath(item: Int(page), section: 0)
-//        print(indexPath.row)
-        
-       // let cell = NumbersCollectionViewCell()
+//        pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+        pageControl.currentPage = Int(page)
     
         switch page {
         case 0.0:
@@ -446,6 +458,11 @@ extension ViewController: SecretInstructionsDelegate {
     
     
 }
+// extension ViewController: UIScrollViewDelegate {
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
+//    }
+//}
 
 
 
