@@ -8,7 +8,7 @@
 
 import UIKit
 
-//@available(iOS 14.0, *)
+
 class NumbersCollectionViewCell: UICollectionViewCell {
     
     var grid: GridModel? {

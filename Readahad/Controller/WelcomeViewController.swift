@@ -104,9 +104,6 @@ class WelcomeViewController: UIViewController {
         
         
  
-        
-        
-
         goToTrickButton.addTarget(self, action: #selector(handleGoToTrick(_:)), for: .touchUpInside)
     }
     private func setupPageControl() {

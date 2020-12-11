@@ -109,11 +109,7 @@ class ViewController: UIViewController {
         setupHiddenInstructionsButton()
         setupVisualEffectView()
 
-        
-        
-        
-        
-        
+    
         colectionView.delegate = self
         colectionView.dataSource = self
 
@@ -402,7 +398,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             makeGuessButton.isEnabled = false
             resetButton.alpha = 0.0
             resetButton.isEnabled = false
-            //cell.selectedImage.image = UIImage(systemName: "checkmark.circle.fill")
         case 1.0:
             makeGuessButton.alpha = 0.2
             makeGuessButton.isEnabled = false
@@ -458,11 +453,7 @@ extension ViewController: SecretInstructionsDelegate {
     
     
 }
-// extension ViewController: UIScrollViewDelegate {
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.size.width)
-//    }
-//}
+
 
 
 
