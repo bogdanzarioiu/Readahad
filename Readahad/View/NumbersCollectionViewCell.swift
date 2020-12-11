@@ -23,7 +23,6 @@ class NumbersCollectionViewCell: UICollectionViewCell {
     private  let numbersGrid: UIImageView = {
         let n1Grid = UIImageView(image: UIImage(named: "Card1New"))
         n1Grid.contentMode = .scaleAspectFill
-        //n1Grid.clipsToBounds = true
         n1Grid.translatesAutoresizingMaskIntoConstraints = false
         
         
@@ -72,15 +71,15 @@ class NumbersCollectionViewCell: UICollectionViewCell {
         addSubview(selectedImage)
         selectedImage.topAnchor.constraint(equalTo: topAnchor, constant: 10).isActive = true
         selectedImage.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        selectedImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        selectedImage.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        selectedImage.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        selectedImage.widthAnchor.constraint(equalToConstant: 30).isActive = true
         
         
     
        
         //grid constraints
          addSubview(numbersGrid)
-        numbersGrid.topAnchor.constraint(equalTo: selectedImage.bottomAnchor, constant: 16).isActive = true
+        numbersGrid.topAnchor.constraint(equalTo: selectedImage.bottomAnchor, constant: 30).isActive = true
 
         numbersGrid.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50).isActive = true
         numbersGrid.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16).isActive = true

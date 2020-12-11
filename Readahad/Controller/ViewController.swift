@@ -223,7 +223,7 @@ class ViewController: UIViewController {
     
     private func setupPageControl() {
         view.addSubview(pageControl)
-        pageControl.topAnchor.constraint(equalTo: colectionView.bottomAnchor, constant: 10).isActive = true
+        pageControl.topAnchor.constraint(equalTo: colectionView.bottomAnchor, constant: 0).isActive = true
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     

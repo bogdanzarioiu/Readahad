@@ -26,7 +26,7 @@ class SecretInstructions: UIView {
         instructions.textColor = .black
         instructions.font = UIFont(name: "AvenirNext-Heavy", size: 12)
         instructions.numberOfLines = 0
-        instructions.text = "Ask the spectator to think of a number between 1 and 63.\nNow, ask him to tap on the card if his number is there.\nLet him scroll through the cards and tap the ones containing his number.\n\nThe phone is doing all the work for you: it adds the top left number of each card each time the spectator selects it.\nThese numbers are: 16, 4, 8, 2 32 1.\n\n\nThere is a RESET button that takes you to the initial grid of numbers ans resets everything so you can perform again.\n\nI hope you'll have fun using this little trick and thank you for trying it!🍻"
+        instructions.text = "Ask the spectator to think of a number between 1 and 63.\nNow, ask him to tap on the card if his number is there.\nLet him scroll through the cards and tap the ones containing his number.\n\nThe phone is doing all the work for you: it adds the top left number of each card each time the spectator selects it.\nThese numbers are: 16, 4, 8, 2, 32 and 1.\n\n\nThere is a RESET button that takes you to the initial grid of numbers ans resets everything so you can perform again.\n\nI hope you'll have fun using this little trick and thank you for trying it!🍻"
         
         return instructions
     }()
