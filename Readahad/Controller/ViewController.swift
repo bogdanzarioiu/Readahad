@@ -93,7 +93,9 @@ class ViewController: UIViewController {
     
 
 
-    
+    override var prefersStatusBarHidden: Bool {
+        true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .tertiarySystemBackground
@@ -204,7 +206,7 @@ class ViewController: UIViewController {
         
         colectionView.translatesAutoresizingMaskIntoConstraints = false
 
-        colectionView.heightAnchor.constraint(equalToConstant: view.frame.size.height / 2).isActive = true
+        colectionView.heightAnchor.constraint(equalToConstant: view.frame.size.height / 1.8).isActive = true
         colectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         colectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         colectionView.bottomAnchor.constraint(equalTo: makeGuessButton.topAnchor, constant: -80).isActive = true
@@ -219,7 +221,7 @@ class ViewController: UIViewController {
     
     private func setupPageControl() {
         view.addSubview(pageControl)
-        pageControl.topAnchor.constraint(equalTo: colectionView.bottomAnchor, constant: 0).isActive = true
+        pageControl.topAnchor.constraint(equalTo: colectionView.bottomAnchor, constant: -10).isActive = true
         pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
     

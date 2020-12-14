@@ -15,10 +15,15 @@ protocol AnswerViewControllerDelegate {
 }
 
 class AnswerViewController: UIViewController {
-     var answerLabel = UILabel()
-     var answerLabelText = String()
+    var answerLabel = UILabel()
+    var answerLabelText = String()
     private var doneButton = UIButton()
     var delegate: AnswerViewControllerDelegate?
+    
+    override var prefersStatusBarHidden: Bool {
+        true
+    }
+    
     
     
 

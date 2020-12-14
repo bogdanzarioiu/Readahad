@@ -18,6 +18,10 @@ class WelcomeViewController: UIViewController {
     private var onboardingData: [OnboardingPageModel]?
     
     private var pageView = OnboardingPageView()
+    
+    override var prefersStatusBarHidden: Bool {
+        true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +30,7 @@ class WelcomeViewController: UIViewController {
         onboardingData =
             [
                 OnboardingPageModel(title: "\nHello👋!\nWelcome to READAHAD!\n\nThis is a simple number guessing trick that you can show someone.\nThe idea of this whole app is that your phone can read someone's mind(hence the name😀).\n\nTo demonstrate this, you ask your spectator to think of a number between 1 and 63.\n\nYou ask them after this to tap on each of the grids that contain their thought of number.\nAt the end they press on GUESS NUMBER and the phone will read their mind🤯 "),
-                OnboardingPageModel(title: "\nHOW THIS WORKS?\n\nEach time the spectator says their number is on a grid, you simply need to add the number in the top left corner to the sum(but the phone does this already for you).\n\nIf you go through the grids you will see that the top left numbers are : 16, 4, 8, 2 32 1 - all powers of 2.\nSo you can construct any number up to 63 included with these powers of 2.\n\nYou can access this info again at any time from the trick screen by tapping in the top right corner.\nIf you look closely you can see a small gray circle. Just tap around it anytime you need a refresher.")]
+                OnboardingPageModel(title: "\nHOW THIS WORKS?\n\nEach time the spectator says their number is on a grid, you simply need to add the number in the top left corner to the sum(but the phone does this already for you).\n\nIf you go through the grids you will see that the top left numbers are : 16, 4, 8, 2, 32 and 1 - all powers of 2.\nSo you can construct any number up to 63 included with these powers of 2.\n\nYou can access this info again at any time from the trick screen by tapping in the top right corner.\nIf you look closely you can see a small gray circle. Just tap around it anytime you need a refresher.")]
 
                 
         
