@@ -157,12 +157,13 @@ class ViewController: UIViewController {
         
         hiddenInstructionsButton.translatesAutoresizingMaskIntoConstraints = false
         
-        hiddenInstructionsButton.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        hiddenInstructionsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         hiddenInstructionsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        hiddenInstructionsButton.heightAnchor.constraint(equalToConstant: 80).isActive = true
-        hiddenInstructionsButton.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        hiddenInstructionsButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        hiddenInstructionsButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         
-        hiddenInstructionsButton.setTitle("◦", for: .normal)
+        hiddenInstructionsButton.setTitle("⊙", for: .normal)
+        hiddenInstructionsButton.titleLabel?.font = UIFont(name: "AvenirNext-Regular", size: 7)
         hiddenInstructionsButton.setTitleColor(.gray, for: .normal)
         hiddenInstructionsButton.addTarget(self, action: #selector(handleSecretInstructions(_:)), for: .touchUpInside)
 
